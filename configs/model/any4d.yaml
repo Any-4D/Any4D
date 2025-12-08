@@ -1,0 +1,20 @@
+defaults:
+  - default
+  - encoder: dinov2_large
+  - info_sharing: aat_ifr_24_layers
+  - pred_head: dpt_pose_scale
+  - pred_head_scene_flow: dpt_scene_flow
+  - task: images_only
+
+# String for model factory
+model_str: "any4d"
+# Model config
+model_config:
+  name: "any4d"
+  encoder_config: ${model.encoder}
+  info_sharing_config: ${model.info_sharing}
+  pred_head_config: ${model.pred_head}
+  scene_flow_pred_head_config: ${model.pred_head_scene_flow}
+  geometric_input_config: ${model.task}
+# Image Normalization Type
+data_norm_type: ${model.encoder.data_norm_type}

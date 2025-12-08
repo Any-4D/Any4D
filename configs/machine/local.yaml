@@ -1,0 +1,14 @@
+defaults:
+  - default
+
+# Root directory containing all datasets
+root_data_dir: "/ocean/projects/cis220039p/mdt2/datasets/dydust3r"
+# Root directory containing pretrained checkpoints for custom models
+root_pretrained_checkpoints_dir: "../../checkpoints"
+# Root directory to log experiments
+root_experiments_dir: "../../any4d_experiments"
+# Root directory containing UniCeption pretrained checkpoints
+root_uniception_pretrained_checkpoints_dir: "../../UniCeption/checkpoints"
+
+# MapAnything dataset metadata directory
+mapanything_dataset_metadata_dir: "/ocean/projects/cis220039p/mdt2/datasets/dydust3r/map-anything/mapanything_dataset_metadata"

@@ -1,0 +1,10 @@
+# Ray Directions on Unit Sphere + Depth along Ray + Global Camera Pose (Trans + Quats) + Confidence + Mask
+input_dim: 3
+scene_rep_dim: 3
+type: "scene_flow"
+scene_rep_type: "scene_flow"
+dense_pred_init_dict:
+  name: "scene_flow"
+  mode: "linear"
+  vmin: ${special_float:"-inf"}
+  vmax: ${special_float:"inf"}
