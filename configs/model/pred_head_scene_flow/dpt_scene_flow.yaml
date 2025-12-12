@@ -1,0 +1,11 @@
+defaults:
+  - adaptor_config: scene_flow
+
+type: "dpt"
+feature_head:
+  feature_dim: 256
+  hooks: [0, 1, 2, 3]
+regressor_head:
+  output_dim: ${model.pred_head_scene_flow.adaptor_config.input_dim}
+adaptor_type: ${model.pred_head_scene_flow.adaptor_config.type}
+dpt_adaptor: ${model.pred_head_scene_flow.adaptor_config.dense_pred_init_dict}

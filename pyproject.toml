@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "any4d"
+version = "1.0"
+description = "Unified Feed-Forward Metric 4D Reconstruction"
+readme = "readme.md"
+authors = [{ name = "Jay Karhade", email = "jaykarhade3@gmail.com" }]
+requires-python = ">=3.10.0"
+dependencies = [
+    "huggingface_hub",
+    "hydra-core",
+    "natsort",
+    "opencv-python-headless==4.10.0.84",
+    "orjson",
+    "pillow-heif",
+    "plyfile",
+    "python-box",
+    "safetensors",
+    "tensorboard",
+    "tqdm",
+    "rerun-sdk>=0.23,<0.24",
+    "torchaudio", ## Temp for AWS
+    "torch~=2.6.0", ## Temp for AWS
+    "torchvision", ## Temp for AWS
+    "trimesh",
+    "matplotlib",
+    "einops",
+    "uniception @ git+https://github.com/JayKarhade/UniCeption.git@dev/any4d",
+    "utils3d @ git+https://github.com/EasternJournalist/utils3d.git@3913c65d81e05e47b9f367250cf8c0f7462a0900"
+]
+
+[project.optional-dependencies]
+data = ["pandas"]
+dev = ["pre-commit", "pytest", "pytest-cov", "ruff"]
+gradio = [
+    "gradio==5.45.0",
+    "gradio_rerun",
+    "spaces"
+]
+
+# Install all optional dependencies
+all = [
+    "any4d[data]",
+    "any4d[dev]",
+    "any4d[gradio]",
+]
+
+# Setuptools configuration
+[tool.setuptools]
+# Disable automatic package discovery to avoid conflicts
+packages = ["any4d"]
+
+# Include package data
+[tool.setuptools.package-data]
+"any4d" = ["**/*"]
+
+# Ruff for linting
+[tool.ruff]
+# Enable the isort rules.
+lint.extend-select = ["I"]
+
+# Following https://www.internalfb.com/wiki/Python/code_formatting/pyfmt/
+target-version = "py310"
+
+# Following https://www.internalfb.com/wiki/Python/code_formatting/pyfmt/
+[tool.ruff.lint.isort]
+case-sensitive = false
+combine-as-imports = true
+detect-same-package = false
+order-by-type = false
+known-first-party = ["any4d", "uniception"]
