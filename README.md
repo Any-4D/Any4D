@@ -28,11 +28,26 @@
 
 </div>
 
+<div align="center">
+
 ## Overview
 
-Any4D is a simple, end-to-end trained transformer model that directly regresses the factored metric 4D geometry and motion of dynamic scenes given various types of inputs (images, calibration, poses, or depth). A single feed-forward model supports multiple 4D reconstruction tasks including dynamic multi-view reconstruction, scene flow estimation, monocular 4D understanding, and more.
+**TLDR:** Any4D is a multi-view transformer for  
+• Feed-forward • Dense • Metric-scale • Multi-modal  
+4D reconstruction of dynamic scenes from RGB videos and diverse setups.
 
-![Overview](./assets/teaser.png)
+<img src="./assets/any4d_teaser_gif.gif" width="1000">
+
+</div>
+
+
+## Notes (12/12)
+
+- The inference code will be refined and updated over the next few days.
+- A stronger and more generalizable model checkpoint, along with full training code will be released soon.
+
+Stay tuned for updates 
+
 
 ## Table of Contents
 
